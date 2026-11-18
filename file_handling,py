@@ -1,0 +1,120 @@
+#****************************************************************************************************************************
+
+#**************************FILE HANDLING ************************************************************************************
+
+
+
+file_path = 'C:/pgp_data_science_AIML/python/string.py'         # filepath
+relative_filepath ='string.py'
+
+def read_file_path():
+    file = open(file_path,'r')                  # assign a file in reading mode
+
+    content = file.read()                       # contents of the file is assigned to 'content'
+    print(content)
+    file.close()
+
+# trying using relative filepath
+
+def read_file_rel_filepath():
+
+    file1 = open(relative_filepath,'r')
+    content1 = file1.read()
+    print(content1)
+    file1.close()
+
+# file.read() will return all the values as a single  string
+#
+#
+
+
+#single line
+
+def read_line_by_line():
+
+    file1 = open(relative_filepath,'r')
+    content1 = file1.readline()                                     # only the firt line
+    print(content1)
+    read_line_by_line()
+    file1.close
+
+
+
+# read lines
+
+
+def read_lines():
+
+    file1 = open(relative_filepath,'r')
+    content1 = file1.readlines()                                     # read all in single string
+    print(content1)
+    for line in content1:
+        print(line)
+    print(type(content1))
+    read_lines()
+    file1.close()
+
+#**************************************************************************************
+
+#**************WRITE A FILE ***********************************************************
+
+# opens a file in writing mode 
+# if a file didn't exit earlier ,now it will be created
+# and open in writing mode
+
+write_path = 'students.txt'
+def write_file():
+    file = open(write_path,'w')
+    file.close()
+
+
+def write_into_file():
+    file = open(write_path, 'w')
+    file.write("gowtham")
+    file.close()
+
+def write_name():
+    file = open(write_path,'w')
+    file.write('raju\n')
+    file.write('theju\n')
+    file.write('revu\n')
+    file.close()
+
+
+write_name()
+
+
+#append
+
+def append_file():
+    file = open(write_path, 'a')
+    file.write("keerthi\n")
+    file.close()
+append_file()
+
+
+# generic fuction to append the data into file
+
+def append_data(file_path,i_name):
+    file = open(file_path,'a')
+    file.write('\n')
+    file.write(i_name)
+    file.close()
+
+append_data('test_file.txt','ICT')
+
+
+
+#
+
+
+def append_data_new(i_file_path,i_name):
+    file = open(i_file_path,'a')
+    file.write('\n')
+    file.write(i_name)
+append_data_new('test_file.text','AIRTEL')
+
+
+
+
+    
